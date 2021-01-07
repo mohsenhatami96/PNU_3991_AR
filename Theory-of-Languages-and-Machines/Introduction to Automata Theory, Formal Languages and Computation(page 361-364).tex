@@ -1,0 +1,285 @@
+\documentclass{article}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\linespread{1.25}
+\usepackage{amsmath}
+\usepackage{color}
+\usepackage{tikz}
+\usetikzlibrary{arrows,automata}
+\usepackage[margin=1in,footskip=0.25in]{geometry}
+
+\begin{document}
+
+\begin{flushright}
+ \texttt{Context-free Grammar} \hspace*{0.1cm}\textbf{$|$} \hspace*{0.1cm} \textbf{361}\hspace*{0.1cm}
+\end{flushright}
+\vspace*{0.5cm}
+
+AC can be replaced by S in the ‘S’ productions for the cases S → ACD/AAC, and AAC can be replaced by S for the production S → AACD. Introduce three non-terminals E, F, and G for ${C_aA}$, $C_aD$, and $C_bD$, respectively. Including these changes, the modiﬁ ed grammar becomes
+ 
+\hspace*{5cm} S → SD/SD/CD/AS/AC/$C_aC$/a
+
+\hspace*{5cm} A → $EC_b/C_aCb$ 
+
+\hspace*{5cm} C → $C_aC/a$ 
+
+\hspace*{5cm} D → $FC_a/GC_b/C_aC_a/C_bC_b$ 
+
+\hspace*{5cm} $C_a$ → a 
+
+\hspace*{5cm} $C_b$ → b 
+
+\hspace*{5cm} E → $C_aA$ 
+
+\hspace*{5cm} F → $C_aD$ 
+
+\hspace*{5cm} G → $C_bD$
+
+Now, the grammar is in CNF.
+
+22. Convert the following grammar into GNF.
+
+\hspace*{5cm} S → A 
+
+\hspace*{5cm} A → aBa/a 
+
+\hspace*{5cm} B → bAb/b
+
+\textit{\textbf{Solution:}} The grammar is not in CNF. So, it has to be converted into CNF. Introduce two nonterminals $C_a$, $C_b$ and two production rules $C_a$ → a, $C_b$ → b. 
+
+\hspace*{5cm} S → A 
+
+\hspace*{5cm} A →$ C_aBC_a/a$ 
+
+\hspace*{5cm} B → $C_bAC_b/b$ 
+
+\hspace*{5cm} $C_a$ → a 
+
+\hspace*{5cm} $C_b$ → b 
+
+Introduce two non-terminals X and Y and two production rules X → $BC_a$ and Y → $AC_b$. The production rule becomes 
+
+\hspace*{5cm} S → A 
+
+\hspace*{5cm} A → $C_aX/a$ 
+
+\hspace*{5cm} B → $C_bY/b$
+
+\hspace*{5cm} $C_a$ → a 
+
+\hspace*{5cm} $C_b$ → b 
+
+\hspace*{5cm} X → $BC_a$
+
+\hspace*{5cm} Y → $AC_b$
+
+\textit{\textbf{Step I:}} In the grammar, there is no null production and no unit production. The grammar also is in CNF. 
+
+\textit{\textbf{Step II:}} In the grammar, there are seven non-terminals S, A, B, $C_a$, $C_b$, X, and Y. Rename the non-terminals as $A_1$, $A_2$, $A_3$, $A_4$, $A_5$, $A_6$, and $A_7$, respectively. After renaming the non-terminals, the modiﬁ ed grammar will be 
+
+\hspace*{5cm} $A_1$ → $A_2$ 
+
+\hspace*{5cm} $A_2$ → $A_4A_6$
+
+\newpage
+\begin{flushleft}
+	\textbf{362}\hspace*{0.1cm} \textbf{$|$} \hspace*{0.1cm} \texttt{Introduction to Automata Theory, Formal Languages and Computation}
+\end{flushleft}
+\vspace*{0.5cm}
+
+\hspace*{5cm} $A_3$ → $A_5A_7/b$ 
+
+\hspace*{5cm} $A_4$ → a 
+
+\hspace*{5cm} $A_5$ → b 
+
+\hspace*{5cm} $A_6$ → $A_3A_4$ 
+
+\hspace*{5cm} $A 7$ → $A_2A_5$ 
+
+
+\textit{\textbf{Step III:}} In the previous production, $A_6$ → $A_3A_4$ and $A_7$ → $A_2A_5$ are not in the form $A_i$ → $A_jV$, where $i \leq j$. 
+
+Using Lemma I, replace $A_3$ → $A_5A_7/b$ in the production $A_6$ → $A_3A_4$. The rule becomes
+
+\hspace*{5cm} $A_6$ → $A_5A_7A_4/bA_4$ 
+
+Still $A_6$ → $A_5A_7A_4$ is not in the form $A_i$ → $A_jV$, where $i \leq j$. Using Lemma I, replace $A_5$ → b in the production. The modiﬁed production is $A_6$ → $bA_7A_4/bA_4$, which is in GNF. 
+
+\textit{\textbf{Step IV:}} Using Lemma I, replace $A_2$ → $A_4A_6/a$ in the production $A_7$ → $A_2A_5$. The production rule becomes $A_7$ → $A_4A_6A_5/aA_5$.
+
+Still $A_7$ → $A_4A_6A_5$ is not in the form $A_i$ → $A_jV$, where $i \leq j$. Using Lemma I, replace $A_4$ → a in the production. 
+
+The modiﬁed production is $A_7$ → $aA_6A_5/aA_5$, which is in GNF. 
+
+Lemma II can be applied on the productions $A_2$ → $A_4A_6/a$ and $A_3$ → $A_5A_7/b$. 
+
+Applying Lemma II on $A_2$ → $A_4A_6/a$, we get 
+
+\hspace*{5cm} $A_2$ → a/aX 
+
+\hspace*{5cm} X → $A_6/A_6X$ 
+
+X → $A_6/A_6X$ are not in GNF. Replacing $A_6$ → $bA_7A_4/bA_4$ in the production, the productions X → $bA_7A_4/bA_7A_4X/bA_4/bA_4X$ are in GNF. 
+
+Applying Lemma II on $A_3$ → $A_5A_7/b$, we get 
+
+\hspace*{5cm} $A_3$ → b/bY 
+
+\hspace*{5cm} Y → $A_7/A_7Y$ 
+
+Y → $A_7/A_7Y$ are not in GNF. Replacing $A_7$ → $aA_6A_5/aA_5$ in the production, the productions Y → $aA_6A_5/aA_6A_5Y/aA_5/aA_5Y$ are in GNF. 
+
+$A_1$ → $A_2$ is not in GNF. Replacing $A_2$ → a/aX in the production, we get $A_1$ → a/aX, which is in GNF. 
+
+The grammar converted into GNF is 
+
+\hspace*{5cm} $A_1$ → aX/a 
+
+\hspace*{5cm} $A_2$ → aX/a 
+
+\hspace*{5cm} $A_3$ → bY/b 
+
+\hspace*{5cm} $A_4$ → a 
+
+\hspace*{5cm} $A_5$ → b 
+
+\hspace*{5cm} $A_6$ → $bA_7A_4/bA_4$ 
+
+\hspace*{5cm} $A_7$ → $aA_6A_5/aA_5$ 
+
+\hspace*{5cm} X → $bA_7A_4/bA_7A_4X/bA_4/bA_4X$ 
+
+\hspace*{5cm} Y → $aA_6A_5/aA_6A_5Y/aA_5/aA_5Y$
+
+\newpage
+\begin{flushright}
+	\texttt{Context-free Grammar} \hspace*{0.1cm}\textbf{$|$} \hspace*{0.1cm} \textbf{363}\hspace*{0.1cm}
+\end{flushright}
+\vspace*{0.5cm}
+
+23. Convert the following grammar to GNF.  
+ 
+i) S → $aSa/aSb/\in$ 
+
+ii) S → $aSB/aSbS/\in$ \hfill [WBUT 2010] 
+
+\textit{\textbf{Solution:}} (It can be done by Lemma I and II, but it is done here in a simpler way.)  
+
+i) S → $aSa/aSb/\in$ 
+
+Introduce two productions Ca → a and Cb → b, and the modiﬁed productions are 
+
+\hspace*{5cm} S → $aSC_a/aSC_b/\in$ 
+
+\hspace*{5cm} $C_a$ → a
+
+\hspace*{5cm} $C_b$ → b 
+
+ii) S → $aSB/aSbS/\in$ Introduce a production $C_b$ → b, and the modiﬁed productions are 
+
+\hspace*{5cm} S → $aSB/aSCbS/\in$ 
+
+\hspace*{5cm} $C_b$ → b 
+
+24. Convert the following grammar into GNF.  
+
+\hspace*{5cm} $A_1$ → $A_2A_3$ 
+
+\hspace*{5cm} $A_2$ → $A_3A_1/b$ 
+
+\hspace*{5cm} $A_3$ → $A_1A_2/a$ \hfill [Cochin University 2009]
+
+\textit{\textbf{Solution:}} In the grammar, the production $A_3$ → $A_1A_2$ is not in the form $A_i$ → $A_jV$ where $i \leq j$. Using Lemma 1, replace $A_1$ → $A_2A_3$ in the production $A_3$ → $A_1A_2$. The rule becomes 
+
+\hspace*{5cm} $A_3$ → $A_2A_3A_2/a$ 
+
+Still it is not in the form $A_i$ → $A_jV$, where $i \leq j$. Replacing $A_2$ → $A_3A_1/b$ in $A_3$ → $A_2A_3A_2/a$, we get $A_3$ → $A_3A_1A_3A_2/bA_3A_2/a$. 
+
+Now, the modiﬁed grammar is 
+
+\hspace*{5cm} $A_1$ → $A_2A_3$
+
+\hspace*{5cm} $A_2$ → $A_3A_1/b$ 
+
+\hspace*{5cm} $A_3$ → $A_3A_1A_3A_2/bA_3A_2/a$ 
+
+The production $A_3$ → $bA_3A_2/a$ is in the format A → $\beta_i$, and the production $A_3$ → $A_3A_1A_3A_2$ is in the format of A → $A\alpha_j$. So, we can introduce a new non-terminal B3, and the modiﬁed A3 production is (according to Lemma II) 
+
+\hspace*{5cm} $A_3$ → $bA_3A_2/a$ 
+
+\hspace*{5cm} $A_3$ → $bA_3A_2B_3$ 
+
+\hspace*{5cm} $A_3$ → $aB_3$ 
+
+And the B3 productions will be 
+
+\hspace*{5cm} $B_3$ → $A_1A_3A_2$ 
+
+\hspace*{5cm} $B_3$ → $A_1A_3A_2$
+
+
+\newpage
+\begin{flushleft}
+	\textbf{364}\hspace*{0.1cm} \textbf{$|$} \hspace*{0.1cm} \texttt{Introduction to Automata Theory, Formal Languages and Computation}
+\end{flushleft}
+\vspace*{0.5cm}
+
+All A3 productions are in GNF. Replacing $A_3$ by all $A_3$ productions in $A_2$, we get the following productions. 
+
+$A_2$ → $bA_3A_2A_1/aA_1/bA_3A_2B_3A_1/aB_3A_1/b$ 
+
+Now, all $A_2$ productions are in GNF. Replacing $A_2$ by all $A_2$ productions in $A_2$, we get the following productions. 
+
+$A_1$ → $bA_3A_2A_1A_3/aA_1A_3/bA_3A_2B_3A_1A_3/aB_3A_1A_3/bA_3$ 
+
+Now, all $A_1$ productions are in GNF. Replacing $A_1$ by all $A_1$ productions in two $B_3$ productions, we get the following productions. 
+
+$B_3$ → $bA_3A_2A_1A_3A_3A_2/aA_1A_3A_3A_2/bA_3A_2B_3A_1A_3A_3A_2/aB_3A_1A_3A_3A_2/bA_3A_3A_2$ 
+
+$B_3$ → $bA_3A_2A_1A_3A_3A_2B_3/aA_1A_3A_3A_2B_3/bA_3A_2B_3A_1A_3A_3A_2B_3/aB_3A_1A_3A_3A_2B_3/bA_3A_3A_2B_3$
+
+Now, the grammar becomes 
+
+$A_1$ → $bA_3A_2A_1A_3/aA_1A_3/bA_3A_2B_3A_1A_3/aB_3A_1A_3/bA_3$ 
+
+$A_2$ → $bA_3A_2A_1/aA_1/bA_3A_2B_3A_1/aB_3A_1/b$ 
+
+$A_3$ → $bA_3A_2B_3/bA_3A_2/aB_3/a$ 
+
+$B_3$ → $bA_3A_2A_1A_3A_3A_2/aA_1A_3A_3A_2/bA_3A_2B_3A_1A_3A_3A_2/aB_3A_1A_3A_3A_2/bA_3A_3A_2$ 
+
+$B_3$ → $bA_3A_2A_1A_3A_3A_2B_3/aA_1A_3A_3A_2B_3/bA_3A_2B_3A_1A_3A_3A_2B_3/aB_3A_1A_3A_3A_2B_3/bA_3A_3A_2B_3$ 
+
+25. Remove the left recursion from the given grammar.
+
+\hspace*{5cm} A → Ba/b 
+
+\hspace*{5cm} B → Bc/Ad/e 
+
+\textit{\textbf{Solution:}} The grammar has indirect left recursion. To remove the left recursion, rename A as $A_1$ and B as $A_2$. The modiﬁed production rules become 
+
+\hspace*{5cm} $A_1$ → $A_2a/b$ 
+
+\hspace*{5cm} $A_2$ → $A_2c/A_1d/e$ 
+
+For i = 1 and j = 1, there is no production in the form $A_1$ → $A_1\alpha$. 
+
+For i = 2 and j = 1, there is a production in the form $A_2$ → $A_1\alpha$. The production is $A_2$ → $A_1d$. According to the algorithm for removal of indirect left recursion, the production becomes 
+
+\hspace*{5cm} $A_2$ → $A_2ad/bd$ 
+
+Now, the A2 production is $A_2$ → $A_2c/A_2ad/bd/e$ 
+
+$A_2$ → $A_2c$ has immediate left recursion. After removing the left recursion, the production becomes 
+
+\hspace*{5cm} $A_2$ → $bdA_2'eA_2'A_2'$ → $cA_2/\in$ 
+
+$A_2$ → $A_2ad$ has immediate left recursion. After removing the left recursion, the production becomes 
+
+\hspace*{5cm} $A_2$ → $bdA_2''/eA_2''A_2''$ → $adA$
+
+
+
+
+\end{document} 
