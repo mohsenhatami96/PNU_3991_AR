@@ -12,5 +12,5 @@
 > ارزیابی ها
 
 ##  بخش عمومی
-- [ارزیابی رزومه و انگیزه نامه](#)
-- [خلاصه ارزیابی بخش عمومی](_General/XX_Theory-of-Languages-and-Machines_CheckList_AR_3991.pdf)
+- [ارزیابی رزومه و انگیزه نامه](_General/XX_CV_CheckList_AR_3991.pdf)
+- [خلاصه ارزیابی بخش عمومی](#)
