@@ -8,11 +8,18 @@
 * [Resume](https://mohsenhatami.com)
 * [SOP](#)
 
+------------------
+> ارزیابی ها
+
+##  بخش عمومی
+- [ارزیابی رزومه و انگیزه نامه](_General/XX_CV_CheckList_AR_3991.pdf)
+- [خلاصه ارزیابی بخش عمومی](_General/XX_GeneralSection_CheckList_AR_3991.pdf)
+
 
 --------------
 ## گروه های درسی
 
-1. AAA
+1. G-L16
     1. [_TLM01-63_فرزاد مومنی](https://github.com/AliRazavi-edu/PNU_3991/tree/master/_BSc/Theory-of-Languages-and-Machines/_1115157_01/63_%D9%81%D8%B1%D8%B2%D8%A7%D8%AF%20%D9%85%D9%88%D9%85%D9%86%D9%8A)
     2. [_TLM02-62_رویا ملکی](https://github.com/AliRazavi-edu/PNU_3991/tree/master/_BSc/Theory-of-Languages-and-Machines/_1115157_02/62_%D8%B1%D9%88%D9%8A%D8%A7%20%D9%85%D9%84%D9%83%D9%8A)
     3. [_TLM02-44_مائده فضلی خانی](https://github.com/AliRazavi-edu/PNU_3991/tree/master/_BSc/Theory-of-Languages-and-Machines/_1115157_02/44_%D9%85%D8%A7%D8%A6%D8%AF%D9%87%20%D9%81%D8%B6%D9%84%D9%8A%20%D8%AE%D8%A7%D9%86%D9%8A)
